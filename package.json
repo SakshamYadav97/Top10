@@ -1,21 +1,27 @@
 {
-  "name": "top10",
-  "version": "1.0.0",
-  "description": "This app for top tens list",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "top",
-    "top",
-    "10",
-    "top"
-  ],
-  "author": "Saksham Yadav",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.4.20"
-  }
+    "name": "top10",
+    "version": "1.0.0",
+    "description": "This app for top tens list",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "backend": "nodemon index.js"
+    },
+    "keywords": [
+        "top",
+        "top",
+        "10",
+        "top"
+    ],
+    "author": "Saksham Yadav",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "cookie-parser": "^1.4.3",
+        "express": "^4.17.1",
+        "mongoose": "^5.4.20"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.9"
+    }
 }
