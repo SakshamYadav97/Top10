@@ -4,8 +4,10 @@
     "description": "This app for top tens list",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js",
-        "backend": "nodemon index.js"
+        "start": "node server/index.js",
+        "backend": "nodemon server/index.js",
+        "frontend": "npm run start --prefix client",
+        "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
     },
     "keywords": [
         "top",
@@ -16,12 +18,18 @@
     "author": "Saksham Yadav",
     "license": "MIT",
     "dependencies": {
+        "axios": "^0.20.0",
+        "bcrypt": "^5.0.0",
         "body-parser": "^1.18.3",
+        "concurrently": "^5.2.0",
         "cookie-parser": "^1.4.3",
         "express": "^4.17.1",
-        "mongoose": "^5.4.20"
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.4.20",
+        "react-router-dom": "^5.2.0"
     },
     "devDependencies": {
+        "http-proxy-middleware": "^1.0.5",
         "nodemon": "^1.18.9"
     }
 }
