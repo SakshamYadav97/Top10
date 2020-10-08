@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './login.scss';
 
 class Login extends Component {
     constructor(props) {
@@ -62,30 +63,36 @@ class Login extends Component {
     render() {
         let { email, password, err } = this.state;
         return (
-            <div>
-
-                <div>
-                    <input
-                        type='text'
-                        value={this.state.email}
-                        onChange={(e) => { this.handleChange(e) }}
-                        name='email'
-                    />
+            <div className='login-wrapper'>
+                <div className='section-wrapper'>
+                    <div className='section'>
+                        <h4 className='login-text'>Login</h4>
+                    </div>
+                    <div className='section email-wrapper'>
+                        <input
+                            type='text'
+                            value={this.state.email}
+                            onChange={(e) => { this.handleChange(e) }}
+                            name='email'
+                            className='input'
+                        />
+                    </div>
+                    <div className='section email-wrapper'>
+                        <input
+                            type='password'
+                            value={this.state.password}
+                            onChange={(e) => { this.handleChange(e) }}
+                            name='password'
+                            className='input'
+                        />
+                    </div>
+                    {err.map((item, key) => {
+                        return (
+                            <p>{item}</p>
+                        )
+                    })}
+                    <button onClick={(e) => { this.loginHandler(e) }}>Login</button>
                 </div>
-                <div>
-                    <input
-                        type='password'
-                        value={this.state.password}
-                        onChange={(e) => { this.handleChange(e) }}
-                        name='password'
-                    />
-                </div>
-                {err.map((item, key) => {
-                    return (
-                        <p>{item}</p>
-                    )
-                })}
-                <button onClick={(e) => { this.loginHandler(e) }}>Login</button>
             </div>
         );
     }

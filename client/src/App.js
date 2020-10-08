@@ -15,7 +15,7 @@ function App() {
                 </Switch>
             </Router>
 
-            hi
+
             {/* <Login /> */}
 
         </div>

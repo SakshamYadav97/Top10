@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './registor.scss';
 
 class Registor extends Component {
     constructor(props) {
@@ -38,41 +39,53 @@ class Registor extends Component {
 
     render() {
         return (
-            <div>
-
-                <div>
-                    <input
-                        type='text'
-                        value={this.state.name}
-                        onChange={(e) => { this.handleChange(e) }}
-                        name='name'
-                    />
+            <div className='register-wrapper'>
+                <div className='section-wrapper'>
+                    <div className='section'>
+                        <h4 className='register-text'>Sign Up</h4>
+                    </div>
+                    <div className='section email-wrapper'>
+                        <input
+                            type='text'
+                            value={this.state.name}
+                            onChange={(e) => { this.handleChange(e) }}
+                            name='name'
+                            className='input'
+                            placeholder='Name'
+                        />
+                    </div>
+                    <div className='section email-wrapper'>
+                        <input
+                            type='text'
+                            value={this.state.lastname}
+                            onChange={(e) => { this.handleChange(e) }}
+                            name='lastname'
+                            className='input'
+                            placeholder='Last Name'
+                        />
+                    </div>
+                    <div className='section email-wrapper'>
+                        <input
+                            type='text'
+                            value={this.state.email}
+                            onChange={(e) => { this.handleChange(e) }}
+                            name='email'
+                            className='input'
+                            placeholder='Email'
+                        />
+                    </div>
+                    <div className='section email-wrapper'>
+                        <input
+                            type='password'
+                            value={this.state.password}
+                            onChange={(e) => { this.handleChange(e) }}
+                            name='password'
+                            className='input'
+                            placeholder='Password'
+                        />
+                    </div>
+                    <button onClick={(e) => { this.loginHandler(e) }}>Sign Up</button>
                 </div>
-                <div>
-                    <input
-                        type='text'
-                        value={this.state.lastname}
-                        onChange={(e) => { this.handleChange(e) }}
-                        name='lastname'
-                    />
-                </div>
-                <div>
-                    <input
-                        type='text'
-                        value={this.state.email}
-                        onChange={(e) => { this.handleChange(e) }}
-                        name='email'
-                    />
-                </div>
-                <div>
-                    <input
-                        type='password'
-                        value={this.state.password}
-                        onChange={(e) => { this.handleChange(e) }}
-                        name='password'
-                    />
-                </div>
-                <button onClick={(e) => { this.loginHandler(e) }}>Sign Up</button>
             </div>
         );
     }
